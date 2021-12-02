@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common';
 import * as fs from 'fs/promises';
 import { join } from 'path';
 import { XMLParser } from 'fast-xml-parser';
-import { Container, ContainerXml } from './app.models';
+import { Container, ContainerXml } from './container.models';
 
-const DATA_FILE_PATH = join(__dirname, '../data/Container_68465468.xml');
+const DATA_FILE_PATH = join(__dirname, '../../../data/Container_68465468.xml');
 
 @Injectable()
-export class AppService {
-  async getContainerData(): Promise<Container> {
+export class ContainerService {
+  async getContainer(_containerId: string): Promise<Container> {
     const fileBuffer = await fs.readFile(DATA_FILE_PATH);
     const xmlString = fileBuffer.toString();
 
