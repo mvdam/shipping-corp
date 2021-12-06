@@ -18,6 +18,7 @@ export interface Parcel {
   Receipient: Receipient;
   Weight: number;
   Value: number;
+  SignedOff?: boolean;
 }
 
 export interface Receipient {
